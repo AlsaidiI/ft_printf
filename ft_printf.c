@@ -6,7 +6,7 @@
 /*   By: ibrahim_als_u <ibrahim_als_u@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/30 18:49:02 by ibrahim_als       #+#    #+#             */
-/*   Updated: 2025/01/30 18:50:27 by ibrahim_als      ###   ########.fr       */
+/*   Updated: 2025/01/31 14:08:04 by ibrahim_als      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	ft_printf(const char *str, ...)
 	va_start(args, str);
 	while (str[i])
 	{
-		if (str[i] == '%')
+		if (str[i++] == '%')
 			len += ft_format(args, str[i + 1]);
 		else
 			len += write(1, &str[i], 1);
